@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora de Investimentos - Senna Dev</title>
     <link rel="stylesheet" href="./src/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body
     class="min-h-screen bg-gradient-to-br from-[#f0fdf4] via-[#e6f4ea] to-white text-gray-800 font-sans grid grid-cols-1 md:grid-cols-3"
@@ -16,8 +15,9 @@
     >
       <div>
         <h1 class="text-4xl font-extrabold mb-10 leading-tight">
-          📈 Calculadora<br />de Investimentos <br />
-          Senna Dev
+          Calculadora<br />de Investimentos <i class="fa-solid fa-hand-holding-dollar"></i>
+          <br />
+          Senna Dev <i class="fa-thin fa-bolt"></i>
         </h1>
       </div>
 
@@ -165,7 +165,7 @@
       <section id="charts-container" class="space-y-8">
         <div class="bg-white rounded-2xl shadow-md p-6 max-w-4xl mx-auto">
           <h2 class="text-xl font-semibold text-[#1b4332] mb-4">
-            📊 Resultado Final
+            Resultado Final <i class="fas fa-chart-pie"></i> 
           </h2>
           <div class="w-full max-w-xl mx-auto">
             <canvas
@@ -176,7 +176,7 @@
         </div>
         <div class="bg-white rounded-2xl shadow-md p-6 max-w-5xl mx-auto">
           <h2 class="text-xl font-semibold text-[#1b4332] mb-4">
-            📉 Evolução do Investimento
+            Evolução do Investimento <i class="fas fa-chart-line"></i> 
           </h2>
           <div class="w-full max-w-4xl mx-auto">
             <canvas id="progression" class="w-full max-h-[280px]"></canvas>
