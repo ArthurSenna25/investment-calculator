@@ -1,3 +1,4 @@
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import { generateReturnsArray } from "./investmentGoals";
 import { Chart } from "chart.js/auto";
 
