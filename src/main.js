@@ -1,4 +1,4 @@
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import { generateReturnsArray } from "./investmentGoals";
 import { Chart } from "chart.js/auto";
 
@@ -187,6 +187,6 @@ for (const formElement of form) {
 }
 
 // Add event listener to the form submission
-form.addEventListener("submit", renderProgression);
+// form.addEventListener("submit", renderProgression);
 
 clearFormButton.addEventListener("click", clearForm);
