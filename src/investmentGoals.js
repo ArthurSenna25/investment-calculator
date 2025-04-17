@@ -11,7 +11,9 @@ export function generateReturnsArray(
   returnTimeFrame = "monthly"
 ) {
   if (!timeHorizon || !startingAmount) {
-    throw new Error("Investimento Inicial e Prazo devem ser informados.");
+    throw new Error(
+      "Investimento inicial e prazo devem ser preenchidos com valores positivos."
+    );
   }
 
   const finalReturnRate =
@@ -25,13 +27,12 @@ export function generateReturnsArray(
   const referenceInvestmentObject = {
     investedAmount: startingAmount,
     interestReturns: 0,
-    totalInterestingReturns: 0,
+    totalInterestReturns: 0,
     month: 0,
     totalAmount: startingAmount,
   };
 
   const returnsArray = [referenceInvestmentObject];
-
   for (
     let timeReference = 1;
     timeReference <= finalTimeHorizon;
@@ -40,18 +41,14 @@ export function generateReturnsArray(
     const totalAmount =
       returnsArray[timeReference - 1].totalAmount * finalReturnRate +
       monthlyContribution;
-
-    const interestingReturns =
-      returnsArray[timeReference - 1].totalAmount * finalReturnRate;
-
+    const interestReturns =
+      returnsArray[timeReference - 1].totalAmount * (finalReturnRate - 1);
     const investedAmount = startingAmount + monthlyContribution * timeReference;
-
-    const totalInterestingReturns = totalAmount - investedAmount;
-
+    const totalInterestReturns = totalAmount - investedAmount;
     returnsArray.push({
       investedAmount,
-      interestingReturns,
-      totalInterestingReturns,
+      interestReturns,
+      totalInterestReturns,
       month: timeReference,
       totalAmount,
     });
