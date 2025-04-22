@@ -41,15 +41,15 @@ function createTableHeader(tableReference, columnsArray) {
   The classes will depend on the needs and design of the project
    */
   [
-    'bg-[#d8f3dc]',
-    'text-[#1b4332]',
+    'bg-[#16A085]',
+    'text-white',
     'text-left',
     'uppercase',
     'text-sm',
-    'tracking-wide',
+    'tracking-wider',
     'border-b',
-    'border-[#95d5b2]',
-    'shadow-sm',
+    'border-[#1ABC9C]',
+    'shadow-md',
   ].forEach((cssClass) => tableHeaderRow.classList.add(...cssClass.split(' ')));
 
   // Create all table header cells
