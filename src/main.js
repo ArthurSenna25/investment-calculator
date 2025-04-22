@@ -53,6 +53,7 @@ function renderProgression(event) {
   }
 
   resetCharts();
+  resetTable();
 
   const startingAmount = Number(
     document.getElementById('starting-amount').value.replace(',', '.'),
@@ -191,6 +192,12 @@ function resetCharts() {
   }
 }
 
+// Function to reset the table before rendering new data
+function resetTable() {
+  const table = document.getElementById('results-table');
+  table.innerHTML = ''; // Limpa toda a tabela, incluindo o cabeçalho e o corpo
+}
+
 // Function to clear the form inputs and charts
 function clearForm() {
   form['starting-amount'].value = '';
@@ -200,6 +207,7 @@ function clearForm() {
   form['tax-rate'].value = '';
 
   resetCharts();
+  resetTable();
 
   const errorInputsContainers = document.querySelectorAll('.error');
 
