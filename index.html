@@ -4,240 +4,276 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora de Investimentos - Senna Dev</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body
-    class="min-h-screen bg-gradient-to-br from-[#f0fdf4] via-[#e6f4ea] to-white text-gray-800 font-sans grid grid-cols-1 md:grid-cols-3"
+    class="min-h-screen bg-gradient-to-br from-[#F0F4F7] via-[#ECF0F1] to-white text-[#1A4F4D] font-sans overflow-x-hidden"
   >
-    <!-- Sidebar -->
-    <aside
-      class="bg-gradient-to-b from-[#2d6a4f] to-[#40916c] text-white px-6 sm:px-8 py-8 md:row-span-2 flex flex-col justify-between shadow-xl rounded-tr-3xl md:rounded-tr-none md:rounded-br-3xl"
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-screen p-4 md:p-0"
     >
-      <div>
-        <h1 class="text-3xl sm:text-4xl font-extrabold mb-4 leading-tight">
-          Calculadora de Investimentos
-          <i class="fa-solid fa-hand-holding-dollar"></i>
-        </h1>
-        <p class="text-base font-medium mb-6">
+      <aside
+        class="bg-[#1A4F4D] text-white px-8 py-10 flex flex-col justify-between shadow-2xl rounded-br-3xl"
+      >
+        <div>
+          <h1
+            class="text-4xl font-extrabold mb-6 leading-tight flex items-center gap-3 text-center sm:text-left"
+          >
+            Calculadora de Investimentos
+          </h1>
           <a
             href="https://www.instagram.com/sennaadev"
             target="_blank"
-            class="inline-block text-white transition-colors bg-[#40916c] rounded-md hover:bg-[#52b788] px-3 py-1"
+            class="inline-block mb-8 text-white bg-[#1ABC9C] hover:bg-[#16A085] rounded-md px-4 py-2 font-semibold shadow-md transition"
           >
-            <i class="fa-brands fa-instagram"></i>
-            Senna Dev
+            <i class="fa-brands fa-instagram"></i> Senna Dev
           </a>
-        </p>
-      </div>
-      <!-- Investment Form -->
-      <form id="investment-form" class="flex flex-col gap-5 text-sm">
-        <!-- Field: Starting Amount -->
-        <div>
-          <label
-            for="starting-amount"
-            class="block font-semibold mb-1 tracking-wide"
-            >Investimento Inicial</label
-          >
-          <div class="flex rounded-md overflow-hidden">
-            <span
-              class="bg-[#1b4332] w-1/6 min-w-[50px] px-3 py-2 text-white font-semibold text-center"
-              >R$</span
-            >
-            <input
-              type="text"
-              id="starting-amount"
-              name="starting-amount"
-              class="w-full px-4 py-2 text-gray-800 focus:outline-none"
-              placeholder="Ex: 1000.00"
-              required
-            />
-          </div>
+
+          <!-- Investment Form -->
+          <form id="investment-form" class="space-y-6 text-sm">
+            <!-- Fields -->
+            <div>
+              <label
+                for="starting-amount"
+                class="block font-semibold mb-1 text-center sm:text-left"
+                >Investimento Inicial</label
+              >
+              <div
+                class="flex rounded-lg overflow-hidden border focus-within:ring-2 focus-within:ring-[#1ABC9C]"
+              >
+                <span
+                  class="bg-[#16A085] px-4 py-2 text-white font-semibold flex items-center justify-center sm:w-1/6 w-full"
+                  >R$</span
+                >
+                <input
+                  type="text"
+                  id="starting-amount"
+                  name="starting-amount"
+                  placeholder="Ex: 1000.00"
+                  required
+                  class="w-full px-4 py-2 text-[#0E6251] focus:outline-none"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="additional-contribution"
+                class="block font-semibold mb-1 text-center sm:text-left"
+                >Aportes Mensais</label
+              >
+              <div
+                class="flex rounded-lg overflow-hidden border focus-within:ring-2 focus-within:ring-[#1ABC9C]"
+              >
+                <span
+                  class="bg-[#16A085] px-4 py-2 text-white font-semibold flex items-center justify-center sm:w-1/6 w-full"
+                  >R$</span
+                >
+                <input
+                  type="text"
+                  id="additional-contribution"
+                  name="additional-contribution"
+                  placeholder="Ex: 200.00"
+                  class="w-full px-4 py-2 text-[#0E6251] focus:outline-none"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="time-amount"
+                class="block font-semibold mb-1 text-center sm:text-left"
+                >Prazo</label
+              >
+              <div
+                class="flex flex-col sm:flex-row rounded-lg overflow-hidden border focus-within:ring-2 focus-within:ring-[#1ABC9C]"
+              >
+                <input
+                  type="text"
+                  id="time-amount"
+                  name="time-amount"
+                  placeholder="Ex: 12"
+                  required
+                  class="w-full sm:w-2/3 px-4 py-2 text-[#0E6251] focus:outline-none"
+                />
+                <select
+                  id="time-amount-period"
+                  class="w-full sm:w-1/3 px-2 py-2 bg-white text-[#0E6251] border-t sm:border-t-0 sm:border-l border-[#0E6251] focus:outline-none"
+                >
+                  <option value="monthly">Meses</option>
+                  <option value="yearly">Anos</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="return-rate"
+                class="block font-semibold mb-1 text-center sm:text-left"
+                >Rentabilidade Esperada</label
+              >
+              <div
+                class="flex flex-col sm:flex-row rounded-lg overflow-hidden border focus-within:ring-2 focus-within:ring-[#1ABC9C]"
+              >
+                <span
+                  class="bg-[#16A085] px-4 py-2 text-white font-semibold flex items-center justify-center sm:w-1/6 w-full"
+                  >%</span
+                >
+                <input
+                  type="text"
+                  id="return-rate"
+                  name="return-rate"
+                  placeholder="Ex: 1.2"
+                  required
+                  class="w-full sm:w-1/2 px-4 py-2 text-[#0E6251] focus:outline-none"
+                />
+                <select
+                  id="evaluation-period"
+                  class="w-full sm:w-1/3 px-2 py-2 bg-white text-[#0E6251] border-t sm:border-t-0 sm:border-l border-[#0E6251] focus:outline-none"
+                >
+                  <option value="monthly">Mensal</option>
+                  <option value="yearly">Anual</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="tax-rate"
+                class="block font-semibold mb-1 text-center sm:text-left"
+                >Imposto sobre o Lucro (%)</label
+              >
+              <div
+                class="flex rounded-lg overflow-hidden border focus-within:ring-2 focus-within:ring-[#1ABC9C]"
+              >
+                <span
+                  class="bg-[#16A085] px-4 py-2 text-white font-semibold flex items-center justify-center sm:w-1/6 w-full"
+                  >%</span
+                >
+                <input
+                  type="text"
+                  id="tax-rate"
+                  name="tax-rate"
+                  placeholder="Ex: 15"
+                  required
+                  class="w-full px-4 py-2 text-[#0E6251] focus:outline-none"
+                />
+              </div>
+            </div>
+          </form>
         </div>
 
-        <!-- Field: Additional Contribution -->
-        <div>
-          <label
-            for="additional-contribution"
-            class="block font-semibold mb-1 tracking-wide"
-            >Aportes Mensais</label
+        <!-- Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 mt-10">
+          <button
+            id="calculate-results"
+            form="investment-form"
+            class="w-full sm:w-1/2 py-3 bg-[#1ABC9C] hover:bg-[#16A085] text-white font-bold rounded-lg transition shadow-md"
           >
-          <div class="flex rounded-md overflow-hidden">
-            <span
-              class="bg-[#1b4332] w-1/6 min-w-[50px] px-3 py-2 text-white font-semibold text-center"
-              >R$</span
-            >
-            <input
-              type="text"
-              id="additional-contribution"
-              name="additional-contribution"
-              class="w-full px-4 py-2 text-gray-800 focus:outline-none"
-              placeholder="Ex: 200.00"
-            />
-          </div>
-        </div>
-
-        <!-- Field: Time Amount -->
-        <div>
-          <label
-            for="time-amount"
-            class="block font-semibold mb-1 tracking-wide"
-            >Prazo</label
+            Calcular
+          </button>
+          <button
+            id="clear-form"
+            class="w-full sm:w-1/2 py-3 bg-white text-[#0E6251] hover:bg-[#ECF0F1] font-bold rounded-lg transition shadow-md border"
           >
-          <div class="flex flex-wrap sm:flex-nowrap rounded-md overflow-hidden">
-            <input
-              type="text"
-              id="time-amount"
-              name="time-amount"
-              class="w-full sm:w-2/3 px-4 py-2 text-gray-800 focus:outline-none"
-              placeholder="Ex: 12"
-              required
-            />
-            <select
-              id="time-amount-period"
-              class="w-full sm:w-1/3 px-2 py-2 bg-white text-gray-800 font-medium focus:outline-none border-t sm:border-t-0 sm:border-l border-[#2d6a4f]"
-            >
-              <option value="monthly">Meses</option>
-              <option value="yearly">Anos</option>
-            </select>
-          </div>
+            Limpar
+          </button>
         </div>
+      </aside>
 
-        <!-- Field: Return Rate -->
-        <div>
-          <label
-            for="return-rate"
-            class="block font-semibold mb-1 tracking-wide"
-            >Rentabilidade Esperada</label
-          >
-          <div class="flex flex-wrap sm:flex-nowrap rounded-md overflow-hidden">
-            <span
-              class="bg-[#1b4332] w-1/6 min-w-[50px] px-3 py-2 text-white font-semibold text-center"
-              >%</span
-            >
-            <input
-              type="text"
-              id="return-rate"
-              name="return-rate"
-              class="w-full sm:w-1/2 px-4 py-2 text-gray-800 focus:outline-none"
-              placeholder="Ex: 1.2"
-              required
-            />
-            <select
-              id="evaluation-period"
-              class="w-full sm:w-1/3 px-2 py-2 bg-white text-gray-800 font-medium focus:outline-none border-t sm:border-t-0 sm:border-l border-[#2d6a4f]"
-            >
-              <option value="monthly">Mensal</option>
-              <option value="yearly">Anual</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Field: Tax Rate -->
-        <div>
-          <label for="tax-rate" class="block font-semibold mb-1 tracking-wide"
-            >Imposto sobre o Lucro (%)</label
-          >
-          <div class="flex rounded-md overflow-hidden">
-            <span
-              class="bg-[#1b4332] w-1/6 min-w-[50px] px-3 py-2 text-white font-semibold text-center"
-              >%</span
-            >
-            <input
-              type="text"
-              id="tax-rate"
-              name="tax-rate"
-              class="w-full px-4 py-2 text-gray-800 focus:outline-none"
-              placeholder="Ex: 15"
-              required
-            />
-          </div>
-        </div>
-      </form>
-
-      <!-- Buttons -->
-      <div class="flex flex-col sm:flex-row mt-6 gap-4">
-        <button
-          id="calculate-results"
-          form="investment-form"
-          class="w-full sm:w-1/2 py-2 bg-white text-[#2d6a4f] font-bold rounded-md hover:bg-[#d8f3dc] transition"
+      <main
+        class="md:col-span-2 px-6 py-8 relative bg-white rounded-2xl shadow-lg border border-[#E0E0E0] overflow-hidden max-h-screen"
+      >
+        <!-- Carousel -->
+        <div
+          id="carousel"
+          class="flex overflow-x-auto scroll-smooth gap-6 items-center"
         >
-          Calcular
-        </button>
-        <button
-          id="clear-form"
-          class="w-full sm:w-1/2 py-2 bg-[#40916c] text-white font-bold rounded-md hover:bg-[#52b788] transition"
-        >
-          Limpar
-        </button>
-      </div>
-    </aside>
-
-    <!-- Main -->
-    <main class="md:col-span-2 px-4 sm:px-6 py-8 space-y-8">
-      <!-- <section id="charts-container" class="space-y-8">
-		<div class="bg-white rounded-2xl shadow-md p-6 max-w-4xl mx-auto">
-		  <h2 class="text-xl font-bold text-[#1b4332] mb-4">
-			Resultado Final <i class="fas fa-chart-pie"></i>
-		  </h2>
-		  <div class="w-full">
-			<canvas
-			  id="final-money-distribution"
-			  class="w-full max-h-[200px]"
-			></canvas>
-		  </div>
-		</div>
-		<div class="bg-white rounded-2xl shadow-md p-6 max-w-5xl mx-auto">
-		  <h2 class="text-xl font-bold text-[#1b4332] mb-4">
-			Evolução do Investimento <i class="fas fa-chart-line"></i>
-		  </h2>
-		  <div class="w-full">
-			<canvas id="progression" class="w-full max-h-[280px]"></canvas>
-		  </div>
-		</div>
-	  </section> -->
-      <section class="space-y-8 h-full">
-        <div class="bg-white rounded-2xl shadow-md p-6 max-w-5xl mx-auto">
-          <h2
-            class="text-xl font-bold text-[#1b4332] mb-4 flex items-center gap-2"
+          <section
+            id="charts-container"
+            class="snap-start shrink-0 basis-full flex flex-col justify-center gap-8 items-center max-h-screen"
           >
-            <i class="fas fa-table"></i>
-            Resultados Mensais
-          </h2>
-          <div class="relative overflow-x-auto max-h-[80dvh] overflow-y-auto rounded-lg">
-            <table
-              id="results-table"
-              class="min-w-full table-auto border-collapse rounded-xl overflow-hidden shadow-md text-sm sm:text-base"
+            <!-- Final Result Chart -->
+            <div
+              class="bg-white rounded-2xl shadow-md p-8 w-full flex flex-col items-center border border-[#E0E0E0] max-h-[45vh] overflow-hidden"
             >
-              <!-- <thead>
-                <tr class="bg-[#d8f3dc] text-[#1b4332] text-left">
-                  <th class="px-4 py-2 font-semibold border-b border-[#95d5b2]">
-                    Mês
-                  </th>
-                  <th class="px-4 py-2 font-semibold border-b border-[#95d5b2]">
-                    Juros
-                  </th>
-                  <th class="px-4 py-2 font-semibold border-b border-[#95d5b2]">
-                    Total Investido
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="text-gray-700">
-                <tr class="hover:bg-[#f0fdf4] transition-colors">
-                  <td class="px-4 py-2 border-b border-gray-200">Jan</td>
-                  <td class="px-4 py-2 border-b border-gray-200">5%</td>
-                  <td class="px-4 py-2 border-b border-gray-200">R$ 100.000</td>
-                </tr>
-                <tr class="hover:bg-[#f0fdf4] transition-colors">
-                  <td class="px-4 py-2 border-b border-gray-200">Fev</td>
-                  <td class="px-4 py-2 border-b border-gray-200">5%</td>
-                  <td class="px-4 py-2 border-b border-gray-200">R$ 105.000</td>
-                </tr>
-              </tbody> -->
-            </table>
-          </div>
+              <h2
+                class="text-2xl font-bold text-[#0E6251] mb-4 flex items-center gap-2 w-full text-center"
+              >
+                <i class="fas fa-chart-pie text-[#F4D03F]"></i> Resultado Final
+              </h2>
+              <div class="flex items-center justify-center w-full h-full">
+                <canvas
+                  id="final-money-distribution"
+                  class="w-full max-w-[80vw] max-h-[30vh] object-contain rounded-lg"
+                ></canvas>
+              </div>
+            </div>
+
+            <!-- Investment Progress Chart -->
+            <div
+              class="bg-white rounded-2xl shadow-md p-8 w-full flex flex-col items-center max-h-[45vh] overflow-hidden border border-[#E0E0E0]"
+            >
+              <h2
+                class="text-2xl font-bold text-[#0E6251] mb-4 flex items-center gap-2 w-full text-center"
+              >
+                <i class="fas fa-chart-line text-[#1ABC9C]"></i> Evolução do
+                Investimento
+              </h2>
+              <div class="flex items-center justify-center w-full h-full">
+                <canvas
+                  id="progression"
+                  class="w-full max-w-[80vw] max-h-[30vh] object-contain rounded-lg"
+                ></canvas>
+              </div>
+            </div>
+          </section>
+
+          <!-- Table Section -->
+          <section id="table-container" class="shrink-0 basis-full">
+            <div
+              class="bg-white rounded-2xl shadow-md w-full h-[80vh] p-8 max-w-5xl mx-auto border border-[#E0E0E0]"
+            >
+              <h2
+                class="text-2xl font-bold text-[#0E6251] mb-4 flex items-center gap-2"
+              >
+                <i class="fas fa-table text-[#F4D03F]"></i> Resultados Mensais
+              </h2>
+              <div
+                class="relative overflow-x-auto max-h-[60vh] overflow-y-auto rounded-lg"
+              >
+                <table
+                  id="results-table"
+                  class="min-w-full table-auto border-collapse rounded-xl overflow-hidden shadow-md text-sm sm:text-base text-[#0E6251]"
+                ></table>
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
-    </main>
+
+        <!-- Carousel Navigation Buttons -->
+        <div
+          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2"
+        >
+          <button
+            id="slide-arrow-previous"
+            class="bg-[#F8F9FA] hover:bg-[#E0E0E0] shadow-md p-3 rounded-full text-[#0E6251] transition-all ease-in-out duration-300 transform hover:scale-105"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button
+            id="slide-arrow-next"
+            class="bg-[#F8F9FA] hover:bg-[#E0E0E0] shadow-md p-3 rounded-full text-[#0E6251] transition-all ease-in-out duration-300 transform hover:scale-105"
+          >
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </main>
+    </div>
 
     <script type="module" src="./src/main.js"></script>
   </body>
