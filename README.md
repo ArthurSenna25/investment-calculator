@@ -23,7 +23,7 @@ A modern and responsive **Investment Calculator** built with **Tailwind CSS**, *
 
 ## Demo
 
-Check out the live demo: https://investment-calculator-senna.vercel.app/
+Check out the live demo: https://investment-calculator-senna-git-main-arthur-de-sennas-projects.vercel.app
 
 ## Installation
 
