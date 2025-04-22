@@ -24,7 +24,8 @@
             target="_blank"
             class="inline-block text-white transition-colors bg-[#40916c] rounded-md hover:bg-[#52b788] px-3 py-1"
           >
-            <i class="fa-brands fa-instagram"></i> Senna Dev
+            <i class="fa-brands fa-instagram"></i>
+            Senna Dev
           </a>
         </p>
       </div>
@@ -174,27 +175,68 @@
     <!-- Main -->
     <main class="md:col-span-2 px-4 sm:px-6 py-8 space-y-8">
       <!-- <section id="charts-container" class="space-y-8">
-        <div class="bg-white rounded-2xl shadow-md p-6 max-w-4xl mx-auto">
-          <h2 class="text-xl font-bold text-[#1b4332] mb-4">
-            Resultado Final <i class="fas fa-chart-pie"></i>
-          </h2>
-          <div class="w-full">
-            <canvas
-              id="final-money-distribution"
-              class="w-full max-h-[200px]"
-            ></canvas>
-          </div>
-        </div>
+		<div class="bg-white rounded-2xl shadow-md p-6 max-w-4xl mx-auto">
+		  <h2 class="text-xl font-bold text-[#1b4332] mb-4">
+			Resultado Final <i class="fas fa-chart-pie"></i>
+		  </h2>
+		  <div class="w-full">
+			<canvas
+			  id="final-money-distribution"
+			  class="w-full max-h-[200px]"
+			></canvas>
+		  </div>
+		</div>
+		<div class="bg-white rounded-2xl shadow-md p-6 max-w-5xl mx-auto">
+		  <h2 class="text-xl font-bold text-[#1b4332] mb-4">
+			Evolução do Investimento <i class="fas fa-chart-line"></i>
+		  </h2>
+		  <div class="w-full">
+			<canvas id="progression" class="w-full max-h-[280px]"></canvas>
+		  </div>
+		</div>
+	  </section> -->
+      <section class="space-y-8 h-full">
         <div class="bg-white rounded-2xl shadow-md p-6 max-w-5xl mx-auto">
-          <h2 class="text-xl font-bold text-[#1b4332] mb-4">
-            Evolução do Investimento <i class="fas fa-chart-line"></i>
+          <h2
+            class="text-xl font-bold text-[#1b4332] mb-4 flex items-center gap-2"
+          >
+            <i class="fas fa-table"></i>
+            Resultados Mensais
           </h2>
-          <div class="w-full">
-            <canvas id="progression" class="w-full max-h-[280px]"></canvas>
+          <div class="relative overflow-x-auto max-h-[80dvh] overflow-y-auto rounded-lg">
+            <table
+              id="results-table"
+              class="min-w-full table-auto border-collapse rounded-xl overflow-hidden shadow-md text-sm sm:text-base"
+            >
+              <!-- <thead>
+                <tr class="bg-[#d8f3dc] text-[#1b4332] text-left">
+                  <th class="px-4 py-2 font-semibold border-b border-[#95d5b2]">
+                    Mês
+                  </th>
+                  <th class="px-4 py-2 font-semibold border-b border-[#95d5b2]">
+                    Juros
+                  </th>
+                  <th class="px-4 py-2 font-semibold border-b border-[#95d5b2]">
+                    Total Investido
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-700">
+                <tr class="hover:bg-[#f0fdf4] transition-colors">
+                  <td class="px-4 py-2 border-b border-gray-200">Jan</td>
+                  <td class="px-4 py-2 border-b border-gray-200">5%</td>
+                  <td class="px-4 py-2 border-b border-gray-200">R$ 100.000</td>
+                </tr>
+                <tr class="hover:bg-[#f0fdf4] transition-colors">
+                  <td class="px-4 py-2 border-b border-gray-200">Fev</td>
+                  <td class="px-4 py-2 border-b border-gray-200">5%</td>
+                  <td class="px-4 py-2 border-b border-gray-200">R$ 105.000</td>
+                </tr>
+              </tbody> -->
+            </table>
           </div>
         </div>
-      </section> -->
-      
+      </section>
     </main>
 
     <script type="module" src="./src/main.js"></script>
