@@ -23,7 +23,7 @@ A modern and responsive **Investment Calculator** built with **Tailwind CSS**, *
 
 ## Demo
 
-Check out the live demo: [Live Demo](#) *(replace with a link to your demo)*
+Check out the live demo:
 
 ## Installation
 
